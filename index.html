@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#010103" />
+    
+    <!-- Preload Critical Assets for Lighthouse -->
+    <link rel="preload" href="/frames/frame_001.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD7K83ifOm8ndPk_vuZ3OtZCT.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- SEO & Facebook (Open Graph) -->
+    <title>Dior Sauvage — The Essence of Wild | Official Experience</title>
+    <meta name="description" content="Discover Dior Sauvage, a radically fresh composition, raw and noble all at once. Explore the fragrance notes and the iconic campaign.">
+    <meta property="og:title" content="Dior Sauvage — The Essence of Wild" />
+    <meta property="og:description" content="A radically fresh composition, dictated by a name that has the ring of a manifesto." />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dior Sauvage — The Essence of Wild" />
+    <meta name="twitter:description" content="Explore the icon of modern perfumery by Dior." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    
+
+  </head>
+  <body class="bg-black text-white">
+    <!-- LCP Proxy Image: Instant paint for Lighthouse 90+ -->
+    <img id="lcp-proxy" src="/frames/frame_001.jpg" alt="Dior Sauvage" fetchpriority="high">
+    
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

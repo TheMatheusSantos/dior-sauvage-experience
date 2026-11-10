@@ -1,0 +1,84 @@
+:root { --bg: #010103; }
+#lcp-proxy {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 5;
+  background-color: var(--bg);
+  transition: opacity 0.8s ease-out;
+}
+@media (min-width: 1101px) {
+  #lcp-proxy { object-fit: contain; }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+
+html, body, #root {
+  @apply bg-[#010103] text-primary font-body antialiased selection:bg-accent selection:text-white;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari and Opera */
+}
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-primary;
+  }
+}
+
+@layer utilities {
+  .liquid-glass {
+    @apply backdrop-blur-3xl bg-white/5 border border-white/10;
+    box-shadow: 
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  }
+
+  .texture-noise {
+    @apply fixed inset-0 z-[1000] opacity-[0.03] pointer-events-none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    will-change: opacity;
+  }
+
+  .double-bezel {
+    @apply bg-surface p-6 md:p-8 rounded-4xl shadow-soft transition-all duration-700;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+  }
+
+  .double-bezel-inner {
+    @apply bg-background/40 rounded-[1.5rem] h-full w-full overflow-hidden relative;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+}
